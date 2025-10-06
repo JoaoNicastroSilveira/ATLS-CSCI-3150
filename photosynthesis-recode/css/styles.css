@@ -9,11 +9,11 @@ a:focus{outline:3px solid #FFB000;outline-offset:2px}
 img{max-width:100%;height:auto;display:block}
 :target{scroll-margin-top:1rem}
 
-/* required: visually hide but keep for screen readers */
+
 .sr-only{
   border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;
   padding:0;position:absolute;white-space:nowrap;width:1px;
 }
 
-/* show skip link when tabbed */
+
 .skip-link:focus{position:fixed;left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.25rem;z-index:1000}
