@@ -2,14 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Class Portal</title>
+  <title>Class Portal — Your Name</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    .wrap{max-width:100ch;margin:0 auto;padding:1rem}
+    .sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}
+    .sr-only:focus{position:fixed;left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.25rem}
+    body{margin:0;font:18px/1.75 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0e0f10}
+    a{color:#0A65CC} a:hover{text-decoration:underline}
+    header,footer{background:#fafafa;border-block:1px solid #e5e7eb}
+    nav ul{list-style:none;display:flex;gap:.75rem;margin:0;padding:0;flex-wrap:wrap}
+    .about-pic{float:left;margin:.15rem 1rem .75rem 0}
+    .about-pic img{width:160px;height:auto;border-radius:.5rem;display:block}
+    @media(max-width:700px){.about-pic{float:none;margin:0 0 .75rem}}
+  </style>
 </head>
 <body>
-  <h1>Class Portal</h1>
-  <ul>
-    <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
-    <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
-  </ul>
+  <a class="sr-only" href="#main">Skip to main content</a>
+
+  <header class="wrap">
+    <h1>Class Portal</h1>
+    <nav aria-labelledby="nav-h">
+      <h2 id="nav-h" class="sr-only">Primary navigation</h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
+        <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
+        <!-- Optional lab links if you add placeholders:
+        <li><a href="labs/lab2/index.html">Lab #2</a></li>
+        <li><a href="labs/lab3/index.html">Lab #3</a></li>
+        <li><a href="labs/lab4/index.html">Lab #4</a></li>
+        -->
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About me</h2>
+      <figure class="about-pic">
+        <img src="images/me.jpg" alt="Portrait of Your Name">
+        <figcaption>Joao Nicastro Silveira
+        </figcaption>
+      </figure>
+      <p>Write 5–10 sentences about yourself (program, interests, tools, what you’ve learned, one accessibility practice you used—skip link, headings, labels, or contrast—and what you want to improve next).</p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
+      <ul>
+        <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
+        <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap" aria-labelledby="foot-h">
+    <h2 id="foot-h" class="sr-only">Footer</h2>
+    <p>© <span id="y"></span> Your Name</p>
+  </footer>
+
+  <script>(function(){var y=document.getElementById('y'); if(y){y.textContent=new Date().getFullYear();}}());</script>
 </body>
 </html>
