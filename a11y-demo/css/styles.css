@@ -20,3 +20,11 @@ button{border:0;background:#0A65CC;color:#fff;padding:.6rem .9rem;border-radius:
 button.muted{background:#4b5563}
 :target{scroll-margin-top:1rem}
 .sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}
+/* skip dropdown */
+.skipbar{background:#0e0f10;color:#fff}
+.skipbar .wrap{display:flex;gap:.5rem;align-items:center}
+.skip-toggle{background:transparent;border:0;color:#fff;padding:.5rem .75rem;cursor:pointer}
+.skip-menu{position:absolute;left:1rem;top:100%;background:#111;padding:.5rem;border-radius:.25rem;display:none}
+.skipbar:focus-within .skip-menu,
+.skipbar:hover .skip-menu{display:block}
+.skip-menu a{display:block;color:#fff;padding:.25rem .5rem}
