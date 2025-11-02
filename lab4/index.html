@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 4 — Multicolumn Grid + Flex Nav</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Google Fonts: serif for headings, sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to main content</a>
+
+  <div class="page">
+    <header class="site-header" role="banner">
+      <h1>Accessible Layout Lab</h1>
+      <p class="dek">CSS Grid for page · Flexbox for nav · responsive and thumb-friendly</p>
+    </header>
+
+    <nav class="site-nav" aria-labelledby="nav-h">
+      <h2 id="nav-h" class="sr-only">Primary navigation</h2>
+      <ul class="menu">
+        <li><a href="#news">News</a></li>
+        <li><a href="#guide">Guide</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <aside class="aside left" aria-labelledby="left-h">
+      <h2 id="left-h">Resources</h2>
+      <ul>
+        <li><a href="https://fonts.google.com/">Google Fonts</a></li>
+        <li><a href="https://color.adobe.com/create/color-wheel">Adobe Color</a></li>
+        <li><a href="https://validator.w3.org/nu/">Nu HTML Validator</a></li>
+        <li><a href="https://wave.webaim.org/">WAVE</a></li>
+        <li><a href="https://gsnedders.html5.org/outliner/">HTML Outliner</a></li>
+      </ul>
+    </aside>
+
+    <main id="main" class="content" role="main" aria-labelledby="main-h">
+      <h2 id="main-h">Main content</h2>
+
+      <section id="news">
+        <h3>Why grid for page layout</h3>
+        <p>Grid handles both rows and columns, making two-dimensional layouts straightforward. We name grid areas and assign regions to those areas for clarity and reordering.</p>
+      </section>
+
+      <section id="guide">
+        <h3>Why flex for navigation</h3>
+        <p>Navigation is one-dimensional. Flexbox excels at distributing list items in a row or column and switching direction at mobile for thumb-friendly targets.</p>
+      </section>
+
+      <section id="tips">
+        <h3>Accessibility tweaks</h3>
+        <ul>
+          <li>Two fonts: Merriweather (headings) and Inter (body).</li>
+          <li>High-contrast Adobe-style palette.</li>
+          <li>Visible focus outlines and a skip link.</li>
+          <li>Touch targets ≥ 44px on mobile.</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside class="aside right" aria-labelledby="right-h">
+      <h2 id="right-h">Quick tips</h2>
+      <ol>
+        <li>Name grid areas clearly.</li>
+        <li>Keep heading levels logical.</li>
+        <li>Label landmarks via <code>aria-labelledby</code>.</li>
+        <li>Test with keyboard and a screen reader.</li>
+      </ol>
+    </aside>
+
+    <footer class="site-footer" role="contentinfo" id="contact">
+      <p>© <span id="y"></span> Lab 4 · Built with Grid + Flexbox</p>
+    </footer>
+  </div>
+
+  <script>
+    (function(){var y=document.getElementById('y'); if(y){y.textContent=new Date().getFullYear();}}());
+  </script>
+</body>
+</html>
