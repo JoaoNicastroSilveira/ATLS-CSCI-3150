@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How To Build Accessibly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">Universal Design Playground</a>
+
+      <button class="nav-toggle" aria-expanded="false">Menu</button>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why.html">Why</a></li>
+          <li><a href="what.html">What</a></li>
+          <li><a href="how.html" aria-current="page">How</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>How To Build Accessibly</h1>
+
+    <p class="lead">
+      These practical steps help you build websites that everyone can use.
+    </p>
+
+    <h2>1. Use Semantic HTML</h2>
+    <p>Use proper elements like &lt;header&gt;, &lt;main&gt;, &lt;nav&gt;, and &lt;footer&gt;.</p>
+
+    <h2>2. Support Keyboard Navigation</h2>
+    <p>All controls should be usable with Tab and Enter/Space.</p>
+
+    <h2>3. Ensure Color Contrast</h2>
+    <p>Text should be readable against its background.</p>
+
+    <h2>4. Use Labels for All Inputs</h2>
+    <p>Forms need clear, accessible labels for every field.</p>
+
+    <h2>5. Provide Text Alternatives</h2>
+    <p>Images need alt text; decorative images should have empty alt attributes.</p>
+  </main>
+
+  <footer>
+    <p>© 2024 Universal Design Playground</p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#nav');
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

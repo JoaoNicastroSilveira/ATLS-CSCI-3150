@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What Is Universal Design?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">Universal Design Playground</a>
+
+      <button class="nav-toggle" aria-expanded="false">Menu</button>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why.html">Why</a></li>
+          <li><a href="what.html" aria-current="page">What</a></li>
+          <li><a href="how.html">How</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>What Is Universal Design?</h1>
+
+    <p class="lead">
+      Universal design means creating websites that people of all abilities can perceive, understand, navigate, and use.
+    </p>
+
+    <h2>The Four Principles</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Perceivable</h3>
+        <p>Information must be visible, audible, or otherwise perceivable to all users.</p>
+      </div>
+
+      <div class="card">
+        <h3>Operable</h3>
+        <p>Users must be able to navigate and interact with all elements — including keyboard users.</p>
+      </div>
+
+      <div class="card">
+        <h3>Understandable</h3>
+        <p>Content and behavior must be predictable, clear, and consistent.</p>
+      </div>
+
+      <div class="card">
+        <h3>Robust</h3>
+        <p>Websites should work across browsers, devices, and assistive technologies.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Universal Design Playground</p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#nav');
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

@@ -9,7 +9,8 @@
     .sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}
     .sr-only:focus{position:fixed;left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.25rem}
     body{margin:0;font:18px/1.75 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0e0f10}
-    a{color:#0A65CC} a:hover{text-decoration:underline}
+    a{color:#0A65CC}
+    a:hover{text-decoration:underline}
     header,footer{background:#fafafa;border-block:1px solid #e5e7eb}
     nav ul{list-style:none;display:flex;gap:.75rem;margin:0;padding:0;flex-wrap:wrap}
     .about-pic{float:left;margin:.15rem 1rem .75rem 0}
@@ -17,11 +18,13 @@
     @media(max-width:700px){.about-pic{float:none;margin:0 0 .75rem}}
   </style>
 </head>
+
 <body>
   <a class="sr-only" href="#main">Skip to main content</a>
 
   <header class="wrap">
     <h1>Class Portal</h1>
+
     <nav aria-labelledby="nav-h">
       <h2 id="nav-h" class="sr-only">Primary navigation</h2>
       <ul>
@@ -29,6 +32,7 @@
         <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
         <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
         <li><a href="lab4/index.html">Lab 4 — Multicolumn Grid + Flex Nav</a></li>
+        <li><a href="final_project/index.html">Universal Design Final Project</a></li>
       </ul>
     </nav>
   </header>
@@ -36,11 +40,28 @@
   <main id="main" class="wrap">
     <section id="about" aria-labelledby="about-h">
       <h2 id="about-h">About me</h2>
+
       <figure class="about-pic">
         <img src="images/me.jpg" alt="Portrait of João Nicastro Silveira">
         <figcaption>João Nicastro Silveira</figcaption>
       </figure>
-      <p>I am João and I am equal parts poker nerd and code goblin. I love the strategy in poker, the reads, the math, and the patience, and I bring the same mindset to programming. This semester I am pushing myself to write semantic and accessible HTML instead of just making it work. One cool accessibility fact we learned is about skip links, the hidden Skip to main content anchors that appear on focus so keyboard users can jump past repeated navigation. The right way to hide them is with the clip method and then show them when they receive focus. I am also paying more attention to headings and labels so screen readers announce the page in a clear order. I am proud of what I have built so far, and I know I can keep improving. My next focus is UX, with cleaner layouts, better spacing, smarter defaults, and less friction overall.</p>
+
+      <p>
+        I am João and I am equal parts poker nerd and code goblin. I love the strategy in poker,
+        the reads, the math, and the patience, and I bring the same mindset to programming.
+      </p>
+
+      <p>
+        This semester I am pushing myself to write semantic and accessible HTML instead of just making it work.
+        One cool accessibility fact we learned is about skip links, the hidden “Skip to main content”
+        anchors that appear on focus so keyboard users can jump past repeated navigation.
+      </p>
+
+      <p>
+        I am also paying more attention to headings and labels so screen readers announce
+        the page in a clear order. I’m proud of what I’ve built so far, and my next focus
+        is UX: cleaner layouts, better spacing, smarter defaults, and less friction overall.
+      </p>
     </section>
 
     <section id="projects" aria-labelledby="projects-h">
@@ -49,6 +70,7 @@
         <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
         <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
         <li><a href="lab4/index.html">Lab 4 — Multicolumn Grid + Flex Nav</a></li>
+        <li><a href="final_project/index.html">Universal Design Final Project</a></li>
       </ul>
     </section>
   </main>
@@ -59,8 +81,10 @@
   </footer>
 
   <script>
-    (function(){var y=document.getElementById('y'); if(y){y.textContent=new Date().getFullYear();}}());
+    (function(){
+      var y=document.getElementById('y');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    }());
   </script>
 </body>
 </html>
-

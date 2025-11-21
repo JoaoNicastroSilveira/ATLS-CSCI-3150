@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Universal Design Playground – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">Universal Design Playground</a>
+
+      <button class="nav-toggle" aria-expanded="false">Menu</button>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="why.html">Why</a></li>
+          <li><a href="what.html">What</a></li>
+          <li><a href="how.html">How</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Universal Design for the Modern Web</h1>
+
+    <p class="lead">
+      Universal design means building websites that everyone can use — regardless of ability, device, or environment.
+    </p>
+
+    <p>
+      This site explores <strong>why</strong> universal design matters, <strong>what</strong> its principles are, and <strong>how</strong> you can apply them.
+    </p>
+
+    <h2>Explore the Pages</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3><a href="why.html">Why Universal Design?</a></h3>
+        <p>A persuasive look at why accessibility and universal design matter for all users.</p>
+      </div>
+
+      <div class="card">
+        <h3><a href="what.html">What Is Universal Design?</a></h3>
+        <p>A breakdown of the main concepts and principles behind inclusive design.</p>
+      </div>
+
+      <div class="card">
+        <h3><a href="how.html">How To Build Accessibly</a></h3>
+        <p>Practical guidance, patterns, and steps to implement universal design in real websites.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Universal Design Playground</p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#nav');
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
