@@ -1,114 +1,40 @@
-/* ---------- RESET ---------- */
-* {
+/* ========== RESET ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
+/* ========== THEME COLORS ========== */
+:root {
+  --page-bg: #f5ece3;         /* warm background */
+  --panel-bg: #fcf7f1;        /* content card */
+  --header-bg: #6b3f4a;       /* plum header */
+  --nav-pill-bg: rgba(255, 255, 255, 0.18);
+  --nav-pill-active-bg: #fdf1df;
+  --nav-pill-active-text: #6b3f4a;
+  --text-main: #291919;
+  --text-muted: #5d4a46;
+  --accent: #c76a3b;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+}
+
+/* ========== BASE TYPOGRAPHY ========== */
 body {
-  font-family: system-ui, sans-serif;
-  background: #f9fafb;
-  color: #111;
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--page-bg);
+  color: var(--text-main);
+  line-height: 1.7;
 }
 
-/* ---------- ACCESSIBILITY HELPERS ---------- */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 1rem;
-  background: #0a58ca;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-}
-.skip-link:focus {
-  top: 1rem;
-  z-index: 1000;
-}
-
-/* ---------- HEADER ---------- */
-header {
-  background: white;
-  border-bottom: 1px solid #ddd;
-}
-
-.header-inner {
-  max-width: 900px;
-  margin: auto;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-decoration: none;
-  color: #111;
-}
-
-/* ---------- NAVIGATION ---------- */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-nav a:hover,
-nav a[aria-current="page"] {
-  color: #0a58ca;
-}
-
-/* Mobile nav button */
-.nav-toggle {
-  display: none;
-}
-
-@media (max-width: 700px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    padding: 1rem;
-    background: white;
-  }
-
-  nav.open ul {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: inline-block;
-    padding: 0.4rem 0.6rem;
-    border: 1px solid #aaa;
-    background: #eee;
-    border-radius: 6px;
-  }
-}
-
-/* ---------- LAYOUT ---------- */
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-/* ---------- TYPOGRAPHY ---------- */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  margin: 1.5rem 0 0.75rem;
+/* nice serif headings for a warm feel */
+h1,
+h2,
+h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: var(--text-main);
 }
 
 p {
@@ -116,34 +42,232 @@ p {
 }
 
 .lead {
-  font-size: 1.15rem;
-  color: #444;
+  font-size: 1.05rem;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
-/* ---------- CARDS ---------- */
+/* ========== SKIP LINK ========== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  z-index: 50;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ========== HEADER & NAV ========== */
+header {
+  background: var(--header-bg);
+  color: #fff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Nav layout */
+nav {
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.4rem;
+  background: var(--nav-pill-bg);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fdfdfd;
+  font-size: 0.96rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.08s ease;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+nav a[aria-current="page"] {
+  background: var(--nav-pill-active-bg);
+  color: var(--nav-pill-active-text);
+}
+
+/* ========== NAV TOGGLE (MOBILE) ========== */
+.nav-toggle {
+  display: none;
+  background: var(--nav-pill-active-bg);
+  color: var(--nav-pill-active-text);
+  border-radius: 999px;
+  border: none;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* small screens – show button, stack nav */
+@media (max-width: 720px) {
+  .header-inner {
+    align-items: stretch;
+  }
+
+  .brand {
+    text-align: left;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 0.75rem;
+  }
+
+  nav a {
+    text-align: left;
+  }
+}
+
+/* large screens – always show nav, hide button */
+@media (min-width: 721px) {
+  nav {
+    display: block !important;
+  }
+}
+
+/* ========== MAIN LAYOUT ========== */
+main {
+  max-width: 960px;
+  margin: 2.4rem auto 3rem;
+  padding: 2.1rem 1.75rem 2.4rem;
+  background: var(--panel-bg);
+  border-radius: 1.4rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* headings inside main */
+main h1 {
+  font-size: 2.15rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+main h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+}
+
+main h3 {
+  font-size: 1.15rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+
+/* lists */
+main ul {
+  margin: 0 0 1rem 1.2rem;
+}
+
+main li + li {
+  margin-top: 0.3rem;
+}
+
+/* ========== CARD GRID (used on Home/What/How) ========== */
 .cards {
   display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
 }
 
 .card h3 {
   margin-bottom: 0.5rem;
 }
 
-/* ---------- FOOTER ---------- */
-footer {
-  text-align: center;
-  color: #555;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
+.card p {
+  margin-bottom: 0;
 }
 
+@media (min-width: 780px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ========== LINKS & FOCUS STATES ========== */
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #231b23;
+  color: #f5edf4;
+  text-align: center;
+  padding: 1.3rem 1rem 1.6rem;
+  font-size: 0.9rem;
+}
