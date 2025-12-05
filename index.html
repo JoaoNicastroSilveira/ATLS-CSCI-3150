@@ -1,90 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Class Portal — João Nicastro Silveira</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    .wrap{max-width:100ch;margin:0 auto;padding:1rem}
-    .sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}
-    .sr-only:focus{position:fixed;left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.25rem}
-    body{margin:0;font:18px/1.75 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0e0f10}
-    a{color:#0A65CC}
-    a:hover{text-decoration:underline}
-    header,footer{background:#fafafa;border-block:1px solid #e5e7eb}
-    nav ul{list-style:none;display:flex;gap:.75rem;margin:0;padding:0;flex-wrap:wrap}
-    .about-pic{float:left;margin:.15rem 1rem .75rem 0}
-    .about-pic img{width:160px;height:auto;border-radius:.5rem;display:block}
-    @media(max-width:700px){.about-pic{float:none;margin:0 0 .75rem}}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <a class="sr-only" href="#main">Skip to main content</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <header class="wrap">
-    <h1>Class Portal</h1>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">Class Portal</a>
 
-    <nav aria-labelledby="nav-h">
-      <h2 id="nav-h" class="sr-only">Primary navigation</h2>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
-        <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
-        <li><a href="lab4/index.html">Lab 4 — Multicolumn Grid + Flex Nav</a></li>
-        <li><a href="final_project/index.html">Universal Design Final Project</a></li>
-      </ul>
-    </nav>
+      <button class="nav-toggle" aria-expanded="false">Menu</button>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main id="main" class="wrap">
-    <section id="about" aria-labelledby="about-h">
-      <h2 id="about-h">About me</h2>
+  <main id="main">
 
-      <figure class="about-pic">
-        <img src="images/me.jpg" alt="Portrait of João Nicastro Silveira">
-        <figcaption>João Nicastro Silveira</figcaption>
-      </figure>
+    <!-- ================= ABOUT ME ================= -->
+    <section id="about">
+      <h1>João Nicastro Silveira</h1>
 
-      <p>
-        I am João and I am equal parts poker nerd and code goblin. I love the strategy in poker,
-        the reads, the math, and the patience, and I bring the same mindset to programming.
-      </p>
+      <div class="cards" style="grid-template-columns: 1fr 2fr;">
+        
+        <!-- Avatar / Photo -->
+        <div class="card" style="text-align:center;">
+          <img src="images/me.jpg" alt="Portrait of João Nicastro Silveira" style="max-width:100%; border-radius:1rem;">
+        </div>
 
-      <p>
-        This semester I am pushing myself to write semantic and accessible HTML instead of just making it work.
-        One cool accessibility fact we learned is about skip links, the hidden “Skip to main content”
-        anchors that appear on focus so keyboard users can jump past repeated navigation.
-      </p>
+        <!-- About Me Text -->
+        <div class="card">
+          <h2>About Me</h2>
+          <p>
+            I’m João — equal parts poker nerd and code goblin. I love the strategy in poker:
+            the reads, the math, the patience, and the way every decision adds up. I bring
+            that same mindset into programming, where I’m constantly thinking about flow,
+            structure, and long-term patterns.
+          </p>
 
-      <p>
-        I am also paying more attention to headings and labels so screen readers announce
-        the page in a clear order. I’m proud of what I’ve built so far, and my next focus
-        is UX: cleaner layouts, better spacing, smarter defaults, and less friction overall.
-      </p>
+          <p>
+            This semester pushed me to write intentional, semantic, accessible HTML instead
+            of “whatever works.” I’ve learned how much design choices impact usability,
+            especially for people using assistive technology. Features like skip links,
+            proper headings, and clear landmarks help create experiences that respect
+            everyone. I'm proud of what I’ve built and excited to continue leveling up my
+            UI/UX skills: cleaner layouts, elegant spacing, smart defaults, and less
+            friction everywhere.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" aria-labelledby="projects-h">
-      <h2 id="projects-h">Projects</h2>
-      <ul>
-        <li><a href="photosynthesis-recode/index.html">Wikipedia Recode</a></li>
-        <li><a href="a11y-demo/index.html">Semantic + Accessibility Demo</a></li>
-        <li><a href="lab4/index.html">Lab 4 — Multicolumn Grid + Flex Nav</a></li>
-        <li><a href="final_project/index.html">Universal Design Final Project</a></li>
-      </ul>
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3><a href="lab2/index.html">Lab 2 — The Basics</a></h3>
+          <p>Foundations of HTML structure, hyperlinks, and essential page building.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="lab3/index.html">Lab 3 — Tables, Forms & Screen Reading</a></h3>
+          <p>Accessible tables, forms, labels, and intro to screen reader testing.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="lab4/index.html">Lab 4 — Accessible CSS Layout</a></h3>
+          <p>CSS Grid + Flexbox multicolumn layout with fully accessible navigation.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="final_project/index.html">Final Project — Universal Design Website</a></h3>
+          <p>A multi-page educational site on Universal Design built with full accessibility.</p>
+        </div>
+
+      </div>
     </section>
   </main>
 
-  <footer class="wrap" aria-labelledby="foot-h">
-    <h2 id="foot-h" class="sr-only">Footer</h2>
-    <p>© <span id="y"></span> João Nicastro Silveira</p>
+  <footer>
+    <p>© <span id="year"></span> João Nicastro Silveira</p>
   </footer>
 
   <script>
-    (function(){
-      var y=document.getElementById('y');
-      if(y){ y.textContent=new Date().getFullYear(); }
-    }());
+    // dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
   </script>
+
 </body>
 </html>

@@ -1,0 +1,258 @@
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --page-bg: #f4ece4;               /* warm neutral background */
+  --panel-bg: #fdf9f3;              /* soft card color */
+  --header-bg: #6d4453;             /* plum header */
+  --nav-pill-bg: rgba(255, 255, 255, 0.2);
+  --nav-pill-active-bg: #f2e3d3;
+  --nav-pill-active-text: #6d4453;
+  --text-main: #2c1c1c;
+  --text-muted: #6a5a55;
+  --accent: #c47442;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.05);
+  --shadow-card: 0 15px 45px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  padding-bottom: 3rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 1rem;
+}
+
+/* ============================================================
+   SKIP LINK
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ============================================================
+   HEADER + NAV
+   ============================================================ */
+header {
+  background: var(--header-bg);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.6rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.brand {
+  font-size: 2rem;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  padding: .45rem .5rem;
+  background: var(--nav-pill-bg);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: .45rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+nav a[aria-current="page"] {
+  background: var(--nav-pill-active-bg);
+  color: var(--nav-pill-active-text);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: var(--nav-pill-active-bg);
+  color: var(--nav-pill-active-text);
+  border: none;
+  border-radius: 999px;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  nav { display: none; }
+
+  nav.open {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: .75rem;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   MAIN CONTENT PANELS
+   ============================================================ */
+main {
+  max-width: 980px;
+  margin: 2.6rem auto 0;
+  background: var(--panel-bg);
+  border-radius: 1.6rem;
+  box-shadow: var(--shadow-card);
+  padding: 2rem 1.8rem 2.6rem;
+  border: 1px solid var(--border-subtle);
+}
+
+main h1 {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+main h2 {
+  font-family: Georgia, serif;
+  margin-top: 2rem;
+  margin-bottom: .7rem;
+  font-size: 1.6rem;
+}
+
+main h3 {
+  font-family: Georgia, serif;
+  margin: .9rem 0 .4rem;
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   GRID + CARDS
+   ============================================================ */
+.cards {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.3rem 1.4rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 760px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY + FOCUS
+   ============================================================ */
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  background: #291d23;
+  color: #f6edf4;
+  font-size: .95rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-radius: 1rem 1rem 0 0;
+}
