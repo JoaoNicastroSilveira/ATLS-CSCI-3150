@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>How To Build Accessibly</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Apply Universal Design</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <div class="header-inner">
-      <a href="index.html" class="brand">Universal Design Playground</a>
+      <a class="brand" href="index.html">Universal Design</a>
 
       <button class="nav-toggle" aria-expanded="false">Menu</button>
 
@@ -21,49 +21,69 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="why.html">Why</a></li>
           <li><a href="what.html">What</a></li>
-          <li><a href="how.html" aria-current="page">How</a></li>
+          <li><a aria-current="page" href="how.html">How</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <h1>How To Build Accessibly</h1>
+    <h1>How Do We Apply Universal Design?</h1>
 
     <p class="lead">
-      These practical steps help you build websites that everyone can use.
+      Applying Universal Design means intentionally building for a wide range of users from the beginning — 
+      not patching accessibility on at the end. It blends thoughtful design, solid technical choices, 
+      and real testing to create experiences that actually work for everyone.
     </p>
 
-    <h2>1. Use Semantic HTML</h2>
-    <p>Use proper elements like &lt;header&gt;, &lt;main&gt;, &lt;nav&gt;, and &lt;footer&gt;.</p>
+    <h2>Design Practices that Actually Help</h2>
+    <ul>
+      <li><strong>Use real personas:</strong> Design for people with different abilities, environments, and devices — not just people like you.</li>
+      <li><strong>Clear hierarchy:</strong> Headings, spacing, and grouping help users process information quickly.</li>
+      <li><strong>Predictable navigation:</strong> Consistent nav removes guesswork and frustration.</li>
+      <li><strong>Design for real-world conditions:</strong> Think about low light, bright sun, shaky hands, cracked screens, and rushed users.</li>
+      <li><strong>Touch-friendly elements:</strong> Big, comfortable targets matter — especially for mobile-first design.</li>
+    </ul>
 
-    <h2>2. Support Keyboard Navigation</h2>
-    <p>All controls should be usable with Tab and Enter/Space.</p>
+    <h2>Technical Foundations</h2>
+    <ul>
+      <li><strong>Semantic HTML:</strong> Use elements like <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code> so assistive technologies understand your structure.</li>
+      <li><strong>Keyboard support:</strong> If users can’t navigate with Tab and Enter, the interface is broken.</li>
+      <li><strong>Accessible forms:</strong> Proper labels and helpful error messages make a huge difference.</li>
+      <li><strong>Color contrast:</strong> Text should stay readable in any environment.</li>
+      <li><strong>Alt text:</strong> Describe meaning and purpose — not just appearance.</li>
+      <li><strong>Responsive layout:</strong> Use flexible, mobile-first patterns like Grid and Flexbox.</li>
+    </ul>
 
-    <h2>3. Ensure Color Contrast</h2>
-    <p>Text should be readable against its background.</p>
+    <h2>Testing for Inclusivity</h2>
+    <ul>
+      <li><strong>Keyboard testing:</strong> Try navigating everything without a mouse.</li>
+      <li><strong>Screen reader testing:</strong> Try VoiceOver or NVDA just to hear how your page is structured.</li>
+      <li><strong>Zoom testing:</strong> Zoom to 200% or 300% and confirm nothing breaks.</li>
+      <li><strong>Color-blind filters:</strong> Check if anything becomes unreadable.</li>
+    </ul>
 
-    <h2>4. Use Labels for All Inputs</h2>
-    <p>Forms need clear, accessible labels for every field.</p>
-
-    <h2>5. Provide Text Alternatives</h2>
-    <p>Images need alt text; decorative images should have empty alt attributes.</p>
+    <h2>Bringing It All Together</h2>
+    <p>
+      Universal Design isn’t just a checklist — it’s a mindset. When you design for people at the edges, 
+      the experience gets better for everyone in the middle too. It’s not just good ethics; it’s good UX. 
+      Building inclusively leads to cleaner interfaces, smoother interactions, and a more human-centered web.
+    </p>
   </main>
 
   <footer>
-    <p>© 2024 Universal Design Playground</p>
+    <p>© 2025 Universal Design Project</p>
   </footer>
 
-  <script>
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('#nav');
-
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+<script>
+const btn=document.querySelector('.nav-toggle');
+const nav=document.querySelector('#nav');
+btn.addEventListener('click',()=>{
+  const expanded=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded',!expanded);
+  nav.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Why Universal Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Universal Design Matters</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -12,14 +12,14 @@
 
   <header>
     <div class="header-inner">
-      <a href="index.html" class="brand">Universal Design Playground</a>
+      <a href="index.html" class="brand">Universal Design</a>
 
       <button class="nav-toggle" aria-expanded="false">Menu</button>
 
       <nav id="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="why.html" aria-current="page">Why</a></li>
+          <li><a aria-current="page" href="why.html">Why</a></li>
           <li><a href="what.html">What</a></li>
           <li><a href="how.html">How</a></li>
         </ul>
@@ -28,49 +28,55 @@
   </header>
 
   <main id="main">
-    <h1>Why Universal Design?</h1>
+    <h1>Why Universal Design Matters</h1>
 
     <p class="lead">
-      Universal design makes the web fair, usable, and accessible for everyone — not just people with perfect vision, fast devices, or ideal conditions.
+      Universal Design matters because the internet is supposed to be for everyone — not just people browsing on a perfect device under perfect conditions. 
+      When we design with inclusion in mind from the start, we create digital spaces that feel welcoming, understandable, and usable for more people.
     </p>
 
-    <h2>1. It's a Justice Issue</h2>
+    <h2>The Bigger Purpose</h2>
     <p>
-      People experience disability in permanent, temporary, or situational ways.  
-      Designing universally respects everyone’s right to access information.
+      Once you start paying attention, you realize how many tiny details can unintentionally block people: low contrast text, confusing layouts, missing labels, 
+      sites that only work with a mouse, or content that only makes sense if you already know what you're looking for. 
+      Universal Design challenges us to think beyond our own habits and build with real human variety in mind.
     </p>
 
-    <h2>2. It's Good UX</h2>
     <p>
-      Clear navigation, readable text, and predictable behavior help all users — not just those with disabilities.
+      The cool part is that inclusive design doesn’t just help people with disabilities — it also benefits anyone who has ever tried to use their phone in bright sunlight, 
+      deal with slow Wi-Fi, navigate with one hand, or make sense of a cluttered interface. In other words, it helps all of us.
     </p>
 
-    <h2>3. It Future-Proofs Your Work</h2>
-    <p>
-      Semantic, accessible code lasts longer and is easier to maintain, update, and scale.
-    </p>
+    <h2>Why It Matters Right Now</h2>
+    <ul>
+      <li><strong>Inclusivity:</strong> No one should be locked out of the web because of poor design choices.</li>
+      <li><strong>Better usability for everyone:</strong> Clear hierarchy, readable text, and consistent layout improve the experience for all users.</li>
+      <li><strong>Predictability:</strong> Interfaces that behave in reliable ways reduce confusion and frustration.</li>
+      <li><strong>Ethical responsibility:</strong> Accessibility is a right — not a bonus feature.</li>
+      <li><strong>Future-proofing:</strong> Semantic and accessible code adapts better to new devices and technologies.</li>
+    </ul>
 
-    <h2>4. It's the Next Step for the Web</h2>
+    <h2>A Movement Shaping the Web’s Future</h2>
     <p>
-      Movements like web standards, responsive design, and semantic HTML shaped the web.  
-      Universal design is the next evolution.
+      The internet has evolved because people pushed for better standards — like semantic HTML, web accessibility, and cleaner CSS. 
+      Universal Design feels like the next big shift. As new designers and developers, our generation has the power to influence how inclusive the web becomes. 
+      The more we adopt these practices, the better the digital world becomes for everyone.
     </p>
   </main>
 
   <footer>
-    <p>© 2024 Universal Design Playground</p>
+    <p>© 2025 Universal Design Project</p>
   </footer>
 
-  <script>
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('#nav');
-
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+<script>
+const btn=document.querySelector('.nav-toggle');
+const nav=document.querySelector('#nav');
+btn.addEventListener('click',()=>{
+  const expanded=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded',!expanded);
+  nav.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>

@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Is Universal Design?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <div class="header-inner">
-      <a href="index.html" class="brand">Universal Design Playground</a>
+      <a href="index.html" class="brand">Universal Design</a>
 
       <button class="nav-toggle" aria-expanded="false">Menu</button>
 
@@ -20,7 +20,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="why.html">Why</a></li>
-          <li><a href="what.html" aria-current="page">What</a></li>
+          <li><a aria-current="page" href="what.html">What</a></li>
           <li><a href="how.html">How</a></li>
         </ul>
       </nav>
@@ -31,48 +31,58 @@
     <h1>What Is Universal Design?</h1>
 
     <p class="lead">
-      Universal design means creating websites that people of all abilities can perceive, understand, navigate, and use.
+      Universal Design is about creating digital experiences that work for the widest range of people possible. 
+      Instead of designing for a “typical” user, we design for real people with real differences — different devices, abilities, environments, and expectations.
     </p>
 
-    <h2>The Four Principles</h2>
+    <h2>A More Realistic View of Users</h2>
+    <p>
+      Not everyone uses the web the same way. Some rely on screen readers, some navigate with a keyboard, 
+      some zoom their text to 200%, and some browse on older phones with tiny screens. Universal Design embraces that reality. 
+      Rather than building separate “accessible versions,” we create one experience flexible enough to support everyone.
+    </p>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Perceivable</h3>
-        <p>Information must be visible, audible, or otherwise perceivable to all users.</p>
-      </div>
+    <h2>The Seven Principles of Universal Design</h2>
+    <p>Here’s my simplified version of the seven principles and why they matter:</p>
 
-      <div class="card">
-        <h3>Operable</h3>
-        <p>Users must be able to navigate and interact with all elements — including keyboard users.</p>
-      </div>
+    <ul>
+      <li><strong>Equitable Use:</strong> Design that works fairly for everyone without needing special alternatives.</li>
+      <li><strong>Flexibility in Use:</strong> Support different devices, inputs, and interaction styles.</li>
+      <li><strong>Simple & Intuitive:</strong> If someone needs instructions to use your interface, it’s too complicated.</li>
+      <li><strong>Perceptible Information:</strong> Content should still make sense even with distractions or limitations.</li>
+      <li><strong>Tolerance for Error:</strong> Interfaces should be forgiving — mistakes happen.</li>
+      <li><strong>Low Effort:</strong> No tiny tap targets or awkward gestures that require precision.</li>
+      <li><strong>Enough Space & Structure:</strong> Make layouts that work across all screen sizes and assistive tech.</li>
+    </ul>
 
-      <div class="card">
-        <h3>Understandable</h3>
-        <p>Content and behavior must be predictable, clear, and consistent.</p>
-      </div>
+    <h2>UD vs. Accessibility</h2>
+    <p>
+      Accessibility is often about meeting requirements. Universal Design is more about the mindset behind those requirements.
+      It encourages us to think deeply about how people actually use the web and to design with empathy. 
+      When you prioritize Universal Design, accessibility comes naturally.
+    </p>
 
-      <div class="card">
-        <h3>Robust</h3>
-        <p>Websites should work across browsers, devices, and assistive technologies.</p>
-      </div>
-    </div>
+    <h2>Why This Matters for Future Designers</h2>
+    <p>
+      Technology will always change, but human needs stay fairly consistent. 
+      Universal Design helps us build experiences that adapt gracefully to new devices and new interactions. 
+      It’s one of the few approaches that stands the test of time.
+    </p>
   </main>
 
   <footer>
-    <p>© 2024 Universal Design Playground</p>
+    <p>© 2025 Universal Design Project</p>
   </footer>
 
-  <script>
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('#nav');
-
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+<script>
+const btn=document.querySelector('.nav-toggle');
+const nav=document.querySelector('#nav');
+btn.addEventListener('click',()=>{
+  const expanded=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded',!expanded);
+  nav.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>
